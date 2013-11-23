@@ -36,5 +36,4 @@ Share.init({
   facebookAppID: YOUR_APP_ID, 
   facebookShareViaAPI: true
 })
-
 ```
