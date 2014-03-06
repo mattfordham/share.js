@@ -2,7 +2,7 @@
 ### Social sharing made a little simpler. ###
 
 1. Include share.js
-2. Add these data attributes to your share links: `data-share-facebook`, `data-share-twitter`, `data-share-pinterest`
+2. Add these data attributes to your share links: `data-share-facebook`, `data-share-twitter`, `data-share-pinterest`, `data-share-linkedin`, `data-share-reddit`
 3. Initialize the library: `Share.init()`
 4. Add some more data attributes to specifiy what gets shared (see below)
 
@@ -32,7 +32,7 @@
 
 #### LinkedIn ####
 `data-share-title` Title to share
-`data-share-link` The URL to share  
+`data-share-link` The URL to share
 `data-share-description` Text to share 
 
 
