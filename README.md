@@ -1,5 +1,5 @@
 ## Share ##
-### Facebook, Twitter, and Pinterest sharing made a little simpler. ###
+### Social sharing made a little simpler. ###
 
 1. Include share.js
 2. Add these data attributes to your share links: `data-share-facebook`, `data-share-twitter`, `data-share-pinterest`
@@ -26,6 +26,15 @@
 `data-share-link` The URL to share  
 `data-share-description` Text to share  
 `data-share-picture` Absolute URL to image to share  
+
+#### Reddit ####
+`data-share-link` The URL to share  
+
+#### LinkedIn ####
+`data-share-title` Title to share 
+`data-share-link` The URL to share  
+`data-share-description` Text to share 
+
 
 ### Advanced Facebook Usage ###
 
