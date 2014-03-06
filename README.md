@@ -31,7 +31,7 @@
 `data-share-link` The URL to share  
 
 #### LinkedIn ####
-`data-share-title` Title to share 
+`data-share-title` Title to share
 `data-share-link` The URL to share  
 `data-share-description` Text to share 
 
