@@ -5,11 +5,13 @@
   PINTEREST_SHARE_URL: 'http://pinterest.com/pin/create/button'
   LINKEDIN_SHARE_URL: 'http://www.linkedin.com/shareArticle?mini=true'
   REDDIT_SHARE_URL: 'http://www.reddit.com/submit'
+  TUMBLR_SHARE_URL: 'http://www.tumblr.com/share/'
   
   facebookAppID: null
   facebookShareViaAPI: false
 
   init: (settings) ->
+    
     if settings
       @facebookAppID = settings.facebookAppID if settings.facebookAppID
       @facebookShareViaAPI = settings.facebookShareViaAPI if settings.facebookShareViaAPI
@@ -22,6 +24,7 @@
     @initTwitter()
     @initLinkedIn()
     @initReddit()
+    @initTumblr()
 
   initFacebook: ->
     if @facebookShareViaAPI
@@ -128,3 +131,20 @@
 
       url = "#{@PINTEREST_SHARE_URL}?description=#{description}&url=#{link}&media=#{picture}"
       window.open(url, 'Pinterest Share', "width=800,height=450,top=#{top},left=#{left}")
+
+  initTumblr: ->
+    $(document).on 'click', '[data-share-tumblr]', (e) =>
+      e.preventDefault()
+      $this = $(e.currentTarget)
+
+      left = (screen.width/2)-(600)
+      top = (screen.height/2)-(200)
+
+      link = $this.data('share-link')
+      picture = $this.data('share-picture')
+
+      link = encodeURIComponent($this.data('share-link'))
+
+      url = "#{@TUMBLR_SHARE_URL}?link=#{link}&photo=#{picture}"
+      window.open(url, 'Tumblr Share', "width=800,height=450,top=#{top},left=#{left}")
+

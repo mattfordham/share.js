@@ -6,6 +6,7 @@
     PINTEREST_SHARE_URL: 'http://pinterest.com/pin/create/button',
     LINKEDIN_SHARE_URL: 'http://www.linkedin.com/shareArticle?mini=true',
     REDDIT_SHARE_URL: 'http://www.reddit.com/submit',
+    TUMBLR_SHARE_URL: 'http://www.tumblr.com/share/',
     facebookAppID: null,
     facebookShareViaAPI: false,
     init: function(settings) {
@@ -24,7 +25,8 @@
       this.initPinterest();
       this.initTwitter();
       this.initLinkedIn();
-      return this.initReddit();
+      this.initReddit();
+      return this.initTumblr();
     },
     initFacebook: function() {
       if (this.facebookShareViaAPI) {
@@ -138,6 +140,22 @@
           picture = $this.data('share-picture');
           url = "" + _this.PINTEREST_SHARE_URL + "?description=" + description + "&url=" + link + "&media=" + picture;
           return window.open(url, 'Pinterest Share', "width=800,height=450,top=" + top + ",left=" + left);
+        };
+      })(this));
+    },
+    initTumblr: function() {
+      return $(document).on('click', '[data-share-tumblr]', (function(_this) {
+        return function(e) {
+          var $this, left, link, picture, top, url;
+          e.preventDefault();
+          $this = $(e.currentTarget);
+          left = (screen.width / 2) - 600.;
+          top = (screen.height / 2) - 200.;
+          link = $this.data('share-link');
+          picture = $this.data('share-picture');
+          link = encodeURIComponent($this.data('share-link'));
+          url = "" + _this.TUMBLR_SHARE_URL + "?link=" + link + "&photo=" + picture;
+          return window.open(url, 'Tumblr Share', "width=800,height=450,top=" + top + ",left=" + left);
         };
       })(this));
     }
