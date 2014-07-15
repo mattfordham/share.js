@@ -56,7 +56,8 @@
             top = (screen.height / 2) - 200.;
             link = $this.data('share-link');
             url = "" + _this.FACEBOOK_SHARE_URL + "?u=" + link;
-            return window.open(url, 'Facebook Share', 'width=800,height=400,top=#{top},left=#{left}');
+            window.open(url, 'Facebook Share', 'width=800,height=400,top=#{top},left=#{left}');
+            return false;
           };
         })(this));
       }
@@ -93,7 +94,8 @@
           text = $this.data('share-description');
           link = $this.data('share-link');
           url = "" + _this.TWITTER_SHARE_URL + "?text=" + text + "&url=" + link;
-          return window.open(url, 'Twitter Share', "width=800,height=400,top=" + top + ",left=" + left);
+          window.open(url, 'Twitter Share', "width=800,height=400,top=" + top + ",left=" + left);
+          return false;
         };
       })(this));
     },
@@ -109,7 +111,8 @@
           text = encodeURIComponent($this.data('share-description'));
           link = encodeURIComponent($this.data('share-link'));
           url = "" + _this.LINKEDIN_SHARE_URL + "?summary=" + text + "&url=" + link + "&title=" + title;
-          return window.open(url, 'LinkedIn Share', "width=600,height=475,top=" + top + ",left=" + left);
+          window.open(url, 'LinkedIn Share', "width=600,height=475,top=" + top + ",left=" + left);
+          return false;
         };
       })(this));
     },
@@ -123,7 +126,8 @@
           top = (screen.height / 2) - 200.;
           link = encodeURIComponent($this.data('share-link'));
           url = "" + _this.REDDIT_SHARE_URL + "?url=" + link;
-          return window.open(url, 'Reddit Share');
+          window.open(url, 'Reddit Share');
+          return false;
         };
       })(this));
     },
@@ -139,7 +143,8 @@
           link = $this.data('share-link');
           picture = $this.data('share-picture');
           url = "" + _this.PINTEREST_SHARE_URL + "?description=" + description + "&url=" + link + "&media=" + picture;
-          return window.open(url, 'Pinterest Share', "width=800,height=450,top=" + top + ",left=" + left);
+          window.open(url, 'Pinterest Share', "width=800,height=450,top=" + top + ",left=" + left);
+          return false;
         };
       })(this));
     },
@@ -155,7 +160,8 @@
           picture = $this.data('share-picture');
           link = encodeURIComponent($this.data('share-link'));
           url = "" + _this.TUMBLR_SHARE_URL + "?link=" + link + "&photo=" + picture;
-          return window.open(url, 'Tumblr Share', "width=800,height=450,top=" + top + ",left=" + left);
+          window.open(url, 'Tumblr Share', "width=800,height=450,top=" + top + ",left=" + left);
+          return false;
         };
       })(this));
     }
