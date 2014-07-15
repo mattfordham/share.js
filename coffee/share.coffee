@@ -51,6 +51,7 @@
 
         url = "#{@FACEBOOK_SHARE_URL}?u=#{link}"
         window.open(url, 'Facebook Share', 'width=800,height=400,top=#{top},left=#{left}')
+        return false
 
 
   initFacebookAPIInteractions: ->
@@ -88,6 +89,7 @@
 
       url = "#{@TWITTER_SHARE_URL}?text=#{text}&url=#{link}"
       window.open(url, 'Twitter Share', "width=800,height=400,top=#{top},left=#{left}")
+      return false
 
   initLinkedIn: ->
     $(document).on 'click', '[data-share-linkedin]', (e) =>
@@ -103,6 +105,7 @@
 
       url = "#{@LINKEDIN_SHARE_URL}?summary=#{text}&url=#{link}&title=#{title}"
       window.open(url, 'LinkedIn Share', "width=600,height=475,top=#{top},left=#{left}")
+      return false
 
   initReddit: ->
     $(document).on 'click', '[data-share-reddit]', (e) =>
@@ -116,6 +119,7 @@
 
       url = "#{@REDDIT_SHARE_URL}?url=#{link}"
       window.open(url, 'Reddit Share')
+      return false
 
   initPinterest: ->
     $(document).on 'click', '[data-share-pinterest]', (e) =>
@@ -131,6 +135,7 @@
 
       url = "#{@PINTEREST_SHARE_URL}?description=#{description}&url=#{link}&media=#{picture}"
       window.open(url, 'Pinterest Share', "width=800,height=450,top=#{top},left=#{left}")
+      return false
 
   initTumblr: ->
     $(document).on 'click', '[data-share-tumblr]', (e) =>
@@ -147,4 +152,5 @@
 
       url = "#{@TUMBLR_SHARE_URL}?link=#{link}&photo=#{picture}"
       window.open(url, 'Tumblr Share', "width=800,height=450,top=#{top},left=#{left}")
+      return false
 
