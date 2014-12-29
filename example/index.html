@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>Share</title>
+</head>
+<body>
+  
+  <a href="#" data-share-facebook data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-title="Share.js" data-share-caption="Caption" data-share-image="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">Facebook</a>  
+  <a href="#" data-share-twitter data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js">Twitter</a>  
+  <a href="#" data-share-google-plus data-share-url="https://github.com/mattfordham/share.js">Google+</a>  
+  <a href="#" data-share-pinterest data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-image="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">Pinterest</a>  
+  <a href="#" data-share-linkedin data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-title="Share.js">LinkedIn</a>  
+  <a href="#" data-share-reddit data-share-url="https://github.com/mattfordham/share.js">Reddit</a>  
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  
+  <script type="text/javascript" src="../dist/share.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var share = new Share({
+        facebookAppID: "1431335870483340", 
+        facebookShareViaAPI: true,
+        onShare: function(platform){
+          console.log(platform);
+        }
+      })
+    })
+  </script>
+</body>
+</html>
