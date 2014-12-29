@@ -59,7 +59,7 @@ var share = new Share({
 
 ### Share via Facebook API
 
-By default, the library will use the Facebook sharer URL (https://www.facebook.com/sharer/sharer.php?u=http://www.github.com). If you'd like more options, however, it can use the Facebook API's share dialog. To use this, initialize the library with the following options:
+By default, the library will use the [Facebook sharer URL](https://www.facebook.com/sharer/sharer.php?u=http://www.github.com). If you'd like more options, however, it can use the Facebook API's share dialog. To use this, initialize the library with the following options:
 
 ```
 var share = new Share({
