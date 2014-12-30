@@ -72,6 +72,10 @@ var share = new Share({
 })
 ```
 
+## Develop and Build
+
+Run `gulp` to develop, and/or `gulp build` to create compiled js.
+
 ## To-do
 - Track actual sharing via Twitter and Google+ using platform js libraries
 
