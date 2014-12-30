@@ -69,7 +69,16 @@ class Share
         ["url", "url"]
       ]
     }
+    {
+      name: "tumblr"
+      share_url: "http://www.tumblr.com/share?"
+      params: [
+        ["link", "url"]
+        ["photo", "image"]
+      ]
+    }
   ]
+
 
 
   #--------------------------------------------------------
@@ -103,7 +112,7 @@ class Share
       $.each platform.params, (index, param) ->
         paramContent = $this.attr("data-share-#{param[1]}")
         paramKey = param[0]
-        url += "&#{paramKey}=#{paramContent}"
+        url += "&#{paramKey}=#{encodeURIComponent(paramContent)}"
 
       @settings.onShare(platform.name) if @settings.onShare
 
@@ -111,6 +120,8 @@ class Share
         url: url
         width: 800
         height: 400
+
+      return false
 
   openWindowAndCenter: (options) ->
     url = options.url

@@ -3,16 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <title>Share</title>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+    h1 {
+      margin-top: 40px;
+    }
+    .share-links {
+      text-align: center;
+      width: 600px;
+      margin: 30px auto;
+    }
+  </style>
 </head>
 <body>
   
-  <a href="#" data-share-facebook data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-title="Share.js" data-share-caption="Caption" data-share-image="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">Facebook</a>  
-  <a href="#" data-share-twitter data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js">Twitter</a>  
-  <a href="#" data-share-google-plus data-share-url="https://github.com/mattfordham/share.js">Google+</a>  
-  <a href="#" data-share-pinterest data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-image="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">Pinterest</a>  
-  <a href="#" data-share-linkedin data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-title="Share.js">LinkedIn</a>  
-  <a href="#" data-share-reddit data-share-url="https://github.com/mattfordham/share.js">Reddit</a>  
-
+  <div class="container">
+    <h1>Share.js</h1>
+    <div class="share-links">
+      <a href="#" class="btn btn-default" data-share-facebook data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-title="Share.js" data-share-caption="Caption" data-share-image="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">Facebook</a>  
+      <a href="#" class="btn btn-default" data-share-twitter data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js">Twitter</a>  
+      <a href="#" class="btn btn-default" data-share-google-plus data-share-url="https://github.com/mattfordham/share.js">Google+</a>  
+      <a href="#" class="btn btn-default" data-share-pinterest data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-image="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">Pinterest</a>  
+      <a href="#" class="btn btn-default" data-share-linkedin data-share-text="Social sharing made a little simpler" data-share-url="https://github.com/mattfordham/share.js" data-share-title="Share.js">LinkedIn</a>  
+      <a href="#" class="btn btn-default" data-share-reddit data-share-url="https://github.com/mattfordham/share.js">Reddit</a>  
+      <a href="#" class="btn btn-default" data-share-tumblr data-share-url="https://github.com/mattfordham/share.js" data-share-image="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">Tumblr</a>  
+    </div>
+  </div>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  
   <script type="text/javascript" src="../dist/share.js"></script>
 

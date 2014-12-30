@@ -35,6 +35,10 @@
         name: "reddit",
         share_url: "http://www.reddit.com/submit?",
         params: [["url", "url"]]
+      }, {
+        name: "tumblr",
+        share_url: "http://www.tumblr.com/share?",
+        params: [["link", "url"], ["photo", "image"]]
       }
     ];
 
@@ -66,16 +70,17 @@
             var paramContent, paramKey;
             paramContent = $this.attr("data-share-" + param[1]);
             paramKey = param[0];
-            return url += "&" + paramKey + "=" + paramContent;
+            return url += "&" + paramKey + "=" + (encodeURIComponent(paramContent));
           });
           if (_this.settings.onShare) {
             _this.settings.onShare(platform.name);
           }
-          return _this.openWindowAndCenter({
+          _this.openWindowAndCenter({
             url: url,
             width: 800,
             height: 400
           });
+          return false;
         };
       })(this));
     };
