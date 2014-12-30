@@ -2,6 +2,10 @@
 
 Social sharing made a little simpler
 
+## Installation
+
+`bower install share.js --save` **OR** `npm install share-js --save`
+
 ## Usage
 
 1. Require Share.js as CommonJS, AMD, or global module. Also, make sure jQuery is around.
