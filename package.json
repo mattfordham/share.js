@@ -1,5 +1,5 @@
 {
-  "name": "share.js",
+  "name": "share-js",
   "version": "0.0.1",
   "description": "Social sharing made a little simpler",
   "main": "dist/share.js",
