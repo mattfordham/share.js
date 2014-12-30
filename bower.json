@@ -1,0 +1,33 @@
+{
+  "name": "Share.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mattfordham/share",
+  "authors": [
+    "Matt Fordham <matt@wintr.us>"
+  ],
+  "description": "Social sharing made a little simpler",
+  "main": "dist/share.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "social",
+    "share",
+    "facebook",
+    "twitter"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.8.3"
+  }
+}
