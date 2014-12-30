@@ -1,0 +1,105 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/Users/matt/.nvm/v0.10.26/bin/npm', 'publish', '.' ]
+2 info using npm@1.4.13
+3 info using node@v0.10.26
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/matt/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/Users/matt/.npm/Share.js/0.0.1/package.tgz', '.' ]
+11 verbose tarball /Users/matt/.npm/Share.js/0.0.1/package.tgz
+12 verbose folder .
+13 info prepublish Share.js@0.0.1
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/matt/.npm/1f1177db-tar.lock
+16 silly lockFile fa1d3578-t-npm-Share-js-0-0-1-package-tgz tar:///Users/matt/.npm/Share.js/0.0.1/package.tgz
+17 verbose lock tar:///Users/matt/.npm/Share.js/0.0.1/package.tgz /Users/matt/.npm/fa1d3578-t-npm-Share-js-0-0-1-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile fa1d3578-t-npm-Share-js-0-0-1-package-tgz tar:///Users/matt/.npm/Share.js/0.0.1/package.tgz
+21 silly lockFile fa1d3578-t-npm-Share-js-0-0-1-package-tgz tar:///Users/matt/.npm/Share.js/0.0.1/package.tgz
+22 silly lockFile 22e8b107--matt-npm-Share-js-0-0-1-package /Users/matt/.npm/Share.js/0.0.1/package
+23 verbose lock /Users/matt/.npm/Share.js/0.0.1/package /Users/matt/.npm/22e8b107--matt-npm-Share-js-0-0-1-package.lock
+24 silly lockFile 22e8b107--matt-npm-Share-js-0-0-1-package /Users/matt/.npm/Share.js/0.0.1/package
+25 silly lockFile 22e8b107--matt-npm-Share-js-0-0-1-package /Users/matt/.npm/Share.js/0.0.1/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'Share.js',
+28 silly publish   version: '0.0.1',
+28 silly publish   description: 'Social sharing made a little simpler',
+28 silly publish   main: 'dist/share.js',
+28 silly publish   directories: { example: 'example' },
+28 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+28 silly publish   repository: { type: 'git', url: 'https://github.com/mattfordham/share.git' },
+28 silly publish   author: { name: 'Matt Fordham' },
+28 silly publish   license: 'ISC',
+28 silly publish   bugs: { url: 'https://github.com/mattfordham/share/issues' },
+28 silly publish   homepage: 'https://github.com/mattfordham/share',
+28 silly publish   devDependencies:
+28 silly publish    { 'coffee-script': '^1.8.0',
+28 silly publish      gulp: '^3.8.10',
+28 silly publish      'gulp-coffee': '^2.2.0',
+28 silly publish      'gulp-livereload': '^3.0.2',
+28 silly publish      'gulp-load-plugins': '^0.8.0',
+28 silly publish      'gulp-rename': '^1.2.0',
+28 silly publish      'gulp-util': '^3.0.1',
+28 silly publish      'gulp-webserver': '^0.9.0' },
+28 silly publish   readme: '# Share.js\n\nSocial sharing made a little simpler\n\n## Usage\n\n1. Require Share.js as CommonJS, AMD, or global module. Also, make sure jQuery is around.\n2. Add the appropriate data attributes to your share links to get things going (`data-share-facebook`, `data-share-twitter`, `data-share-google-plus`, `data-share-pinterest`, `data-share-linkedin`, `data-share-reddit`)\n3. Add some more data attributes to specifiy what gets shared (see below)\n4. Initialize the library: `new Share()`\n\n## Data Attributes \n\n#### Facebook (simple) \n- `data-share-url` The URL to share  \n\n#### Twitter \n- `data-share-url` The URL to share  \n- `data-share-text` Text to share \n\n#### Google+ \n- `data-share-url` The URL to share  \n\n#### Pinterest\n- `data-share-url` The URL to share  \n- `data-share-text` Text to share  \n- `data-share-image` Absolute URL to image to share  \n\n#### Reddit \n- `data-share-url` The URL to share  \n\n#### LinkedIn \n- `data-share-title` Title to share \n- `data-share-url` The URL to share\n- `data-share-text` Text to share \n\n#### Facebook (advanced)\n- `data-share-url` The URL to share  \n- `data-share-title` Title to use in share dialog  \n- `data-share-caption` Caption to use in share dialog   \n- `data-share-text` Description to use in share dialog   \n- `data-share-image` Absolute URL to image to share\n\n## Advanced Usage\n\n### onShare Callback \n\nAn `onShare` callback can be registered within settings if you\'d like to fire other actions when a share link is clicked, such as analytics tracking. \n\n**Important note: ** only shares via the Facebook API will trigger the `onShare` callback upon actual successful shares. In all other cases, the callback will fire when a share link is clicked.\n\n```\nvar share = new Share({\n  onShare: function(platform){\n    console.log(platform);\n  }\n})\n```\n\n### Share via Facebook API\n\nBy default, the library will use the [Facebook sharer URL](https://www.facebook.com/sharer/sharer.php?u=http://www.github.com). If you\'d like more options, however, it can use the Facebook API\'s share dialog. To use this, initialize the library with the following options:\n\n```\nvar share = new Share({\n  facebookAppID: YOUR_APP_ID, \n  facebookShareViaAPI: true\n})\n```\n\n## To-do\n- Track actual sharing via Twitter and Google+ using platform js libraries\n\n#### License\n\nCopyright (c) 2013 - 2014, mattfordham / wintr.us\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: '81826cb3216ad9ee51bc0132c888060e3b6102e6',
+28 silly publish   _id: 'Share.js@0.0.1',
+28 silly publish   _shasum: '46718b6db1a6831696c428a8203872d11799b02f',
+28 silly publish   _from: '.' }
+29 verbose url raw Share.js
+30 verbose url resolving [ 'https://registry.npmjs.org/', './Share.js' ]
+31 verbose url resolved https://registry.npmjs.org/Share.js
+32 info trying registry request attempt 1 at 15:23:13
+33 http PUT https://registry.npmjs.org/Share.js
+34 http 403 https://registry.npmjs.org/Share.js
+35 verbose headers { date: 'Tue, 30 Dec 2014 23:23:07 GMT',
+35 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+35 verbose headers   'content-type': 'application/json',
+35 verbose headers   'cache-control': 'max-age=60',
+35 verbose headers   'content-length': '76',
+35 verbose headers   'accept-ranges': 'bytes',
+35 verbose headers   via: '1.1 varnish',
+35 verbose headers   'x-served-by': 'cache-lax1431-LAX',
+35 verbose headers   'x-cache': 'MISS',
+35 verbose headers   'x-cache-hits': '0',
+35 verbose headers   'x-timer': 'S1419981786.998165,VS0,VE140',
+35 verbose headers   'keep-alive': 'timeout=10, max=50',
+35 verbose headers   connection: 'Keep-Alive' }
+36 error publish Failed PUT 403
+37 error Error: forbidden New packages must have all-lowercase names: Share.js
+37 error     at RegClient.<anonymous> (/Users/matt/.nvm/v0.10.26/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:274:14)
+37 error     at Request._callback (/Users/matt/.nvm/v0.10.26/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:212:65)
+37 error     at Request.self.callback (/Users/matt/.nvm/v0.10.26/lib/node_modules/npm/node_modules/request/request.js:123:22)
+37 error     at Request.EventEmitter.emit (events.js:98:17)
+37 error     at Request.<anonymous> (/Users/matt/.nvm/v0.10.26/lib/node_modules/npm/node_modules/request/request.js:893:14)
+37 error     at Request.EventEmitter.emit (events.js:117:20)
+37 error     at IncomingMessage.<anonymous> (/Users/matt/.nvm/v0.10.26/lib/node_modules/npm/node_modules/request/request.js:844:12)
+37 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+37 error     at _stream_readable.js:920:16
+37 error     at process._tickCallback (node.js:415:13)
+38 error If you need help, you may report this *entire* log,
+38 error including the npm and node versions, at:
+38 error     <http://github.com/npm/npm/issues>
+39 error System Darwin 14.0.0
+40 error command "node" "/Users/matt/.nvm/v0.10.26/bin/npm" "publish" "."
+41 error cwd /Users/matt/Work/Misc/OpenSource/share
+42 error node -v v0.10.26
+43 error npm -v 1.4.13
+44 verbose exit [ 1, true ]
